@@ -5,6 +5,11 @@ import RadioButtons from "RadioButtons/RadioButtons";
 import "./App.css";
 
 const App = () => {
+
+  const handleSelectionChange = (selected) => {
+    console.log("Selected option:", selected);
+  };
+
   return (
     <div>
       <div className="App-component">
@@ -33,7 +38,15 @@ const App = () => {
       <div className="App-component">
         <header className="App-header">Radio Buttons component (TODO)</header>
         <div className="App-content">
-          <RadioButtons />
+          <RadioButtons
+            options={[
+              { value: 'apple', label: 'Apple' },
+              { value: 'pear', label: 'Pear' },
+              { value: 'orange', label: 'Orange' }
+            ]}
+          defaultSelected="apple"
+          onChange={handleSelectionChange}
+          />
         </div>
       </div>
     </div>
